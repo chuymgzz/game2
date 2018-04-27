@@ -1,26 +1,25 @@
 
+// Selects a random number between 19 - 100 at the start of the game
 $( document ).ready(function(){
-  var Random=Math.floor(Math.random()*101+19)
-  // Selects a random number to be shown at the start of the game
-  // Number should be should be between 19 - 120
-  //
+  var Random=Math.floor(Math.random()*81+19)
+
+// Attaches random number to the randomNumber id in the HTML
   $('#randomNumber').text(Random);
-  // Appending random number to the randomNumber id in the html doc
-  //
-  var num1= Math.floor(Math.random()*11+1)
-  var num2= Math.floor(Math.random()*11+1)
-  var num3= Math.floor(Math.random()*11+1)
-  var num4= Math.floor(Math.random()*11+1)
-  // Setting up random numbers for each jewel
-  // Random number has to be between 1 - 12
-  // 
+
+// Setting up random numbers for each gem between 1 - 12
+  var num1= Math.floor(Math.random()*10+1)
+  var num2= Math.floor(Math.random()*10+1)
+  var num3= Math.floor(Math.random()*10+1)
+  var num4= Math.floor(Math.random()*10+1)
+
+//  Variables for the scores
   var userTotal= 0; 
   var wins= 0;
   var losses = 0;
-  //  Decaring variables for tallies
+
+// Resets game
 $('#numberWins').text(wins);
 $('#numberLosses').text(losses);
-//resets the game
 function reset(){
       Random=Math.floor(Math.random()*101+19);
       console.log(Random)
@@ -32,66 +31,67 @@ function reset(){
       userTotal= 0;
       $('#finalTotal').text(userTotal);
       } 
-//adds the wins to the userTotal
-function yay(){
+
+// Adds wins to the userTotal
+function win(){
 alert("Winner winner, chicken dinner!");
   wins++; 
   $('#numberWins').text(wins);
   reset();
 }
-//addes the losses to the userTotal
-function loser(){
+
+// Adds losses to the userTotal
+function lose(){
 alert ("Sometimes you lose. Nothing you can do but admit it!");
   losses++;
   $('#numberLosses').text(losses);
   reset()
 }
-//sets up click for jewels
-  $('#one').on ('click', function(){
+
+// Click function for gems
+  $('#diamond').on ('click', function(){
     userTotal = userTotal + num1;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal); 
-          //sets win/lose conditions
         if (userTotal == Random){
-          yay();
+          win();
         }
         else if ( userTotal > Random){
-          loser();
+          lose();
         }   
   })  
-  $('#two').on ('click', function(){
+  $('#gem').on ('click', function(){
     userTotal = userTotal + num2;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal); 
         if (userTotal == Random){
-          yay();
+          win();
         }
         else if ( userTotal > Random){
-          loser();
+          lose();
         } 
   })  
-  $('#three').on ('click', function(){
+  $('#gem2').on ('click', function(){
     userTotal = userTotal + num3;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal);
-//sets win/lose conditions
           if (userTotal == Random){
           yay();
         }
         else if ( userTotal > Random){
-          loser();
+          lose();
         } 
   })  
-  $('#four').on ('click', function(){
+  $('#ruby').on ('click', function(){
     userTotal = userTotal + num4;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal); 
       
           if (userTotal == Random){
-          yay();
+          win();
         }
         else if ( userTotal > Random){
-          loser();
+          lose();
         }
   });   
 }); 
