@@ -76,7 +76,7 @@ alert ("Sometimes you lose. Nothing you can do but admit it!");
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal);
           if (userTotal == Random){
-          yay();
+          win();
         }
         else if ( userTotal > Random){
           lose();
