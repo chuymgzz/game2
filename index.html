@@ -24,20 +24,36 @@
       <div class="col-md-6 text-center">
         <header>
         <img src="">
-        <h2 class="intro__title">The Psychic Game</h2>
+        <h2 class="intro__title">The Gem Game</h2>
         </header>
 <!--Instructions-->
         <div class="instructions">
-          <p class="intro__desc">Try to beat my computer.<br>Guess what letter it is thinking of:</p>
+          <p class="intro__desc">You will be given a random number at the start of the game.<br>By clicking on a crystal, you will add a specific amount of points to your total score<br>You win the game by matching your total score to the random number.</p>
           <br>
         </div>
 <!--Game-->
+
+        <div>
+          <img src="assets/images/diamond.png" width= "100px" class=gemImage id="one" alt="Blue Gem">
+          <img src="assets/images/gem.png" width= "100px" class=gemImage id="two" alt="Green Gem">
+          <img src="assets/images/gem2.png" width= "100px" class=gemImage id= "three" alt="Red Gem">
+          <img src="assets/images/ruby.png" width= "100px" class=gemImage id= "four" alt="Yellow Gem">
+        </div>
+        <br>
+
         <div id="magic">
           <ul class="list-group">
-            <li class="list-group-item"><p id="wins">Wins: </p></li>
-            <li class="list-group-item"><p id="losses">Losses: </p></li>
-            <li class="list-group-item"><p id="guessLeft">Guesses Left: </p></li>
-            <li class="list-group-item"><p id="let">Letters So Far: </p></li>
+            <li class="list-group-item numberToMatch">
+              <p> Number To Get: <span id= "randomNumber"></span></p>
+            </li>
+            <li class="list-group-item userTotal">
+              <p> Your Current Number: <span id= "finalTotal"></span></p>
+            </li>
+            <br>
+            <li class="list-group-item winsAndLosses">
+              <p> Wins: <span id= "numberWins"></span></p>
+              <p> Losses: <span id= "numberLosses"></span></p>
+            </li>
           </ul>  
         </div>
 <!--Sets space right of the content-->  
@@ -54,6 +70,7 @@
           </div>
         </footer>
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
